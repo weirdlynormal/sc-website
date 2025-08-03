@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Use Case on Advanced JS - Axess Academy</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="sc-theme.css" />
+  <style>
+    .btn-edit {
+      background: #fff;
+      color: #0072ce;
+      border: 2px solid #0072ce;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 4px 18px;
+      margin-right: 6px;
+      transition: background 0.2s, color 0.2s;
+      outline: none;
+    }
+    .btn-edit:hover, .btn-edit:focus {
+      background: #0072ce;
+      color: #fff;
+    }
+    body {
+      background: #f4f8fb;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .header-bar {
+      background: #fff;
+      border-bottom: 4px solid #009e60;
+      padding: 18px 0 10px 0;
+      border-radius: 0 0 18px 18px;
+      box-shadow: 0 4px 24px rgba(0, 114, 206, 0.10);
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .axess-logo {
+      height: 48px;
+      filter: drop-shadow(0 0 2px #009e60);
+    }
+    .internal-label {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #0072ce 0%, #009e60 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      /* text-fill-color: transparent; removed for compatibility */
+      font-family: 'Segoe UI Semibold', sans-serif;
+      margin-right: 12px;
+    }
+    .page-section {
+      background: #fff;
+      border-radius: 18px;
+      padding: 40px 48px 32px 48px;
+      box-shadow: 0 4px 24px rgba(0, 114, 206, 0.10);
+      margin: 40px 0;
+      width: 100%;
+      max-width: none;
+    }
+    .usecase-title {
+      font-weight: 700;
+      font-size: 32px;
+      color: #009e60;
+      letter-spacing: 0.5px;
+    }
+    .academy-label {
+      font-size: 20px;
+      color: #0072ce;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: capitalize;
+    }
+    .form-control {
+      border: 1.5px solid #b2dfdb;
+      border-radius: 8px;
+      background: #fafdff;
+      font-size: 16px;
+    }
+    .form-control:focus {
+      border-color: #009e60;
+      box-shadow: 0 0 6px #b2dfdb80;
+    }
+    .btn-sc-primary {
+      background: #009e60;
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+      font-size: 18px;
+      padding: 8px 32px;
+    }
+    .btn-sc-primary:hover, .btn-sc-primary:focus {
+      background: #006747;
+      color: #fff;
+    }
+    .btn-outline-sc-primary {
+      border: 2px solid #009e60;
+      color: #009e60;
+      background: transparent;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+      font-size: 18px;
+      padding: 8px 32px;
+    }
+    .btn-outline-sc-primary:hover, .btn-outline-sc-primary:focus {
+      background: #009e60;
+      color: #fff;
+    }
+    .table {
+      border: 1.5px solid #b2dfdb;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      margin-top: 24px;
+    }
+    .thead-sc {
+      background: #e6f5ee;
+      color: #009e60;
+      font-weight: 600;
+      font-size: 17px;
+    }
+    .table-bordered td,
+    .table-bordered th {
+      border: 1px solid #b2dfdb;
+    }
+    .table-hover tbody tr:hover {
+      background: #f1f8f6;
+    }
+    @media (max-width: 900px) {
+      .page-section {
+        padding: 18px 8px 18px 8px;
+      }
+      .header-bar {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+      .usecase-title {
+        font-size: 22px;
+      }
+      .academy-label {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header-bar d-flex align-items-center justify-content-between px-4">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Standard_Chartered_%282021%29.svg"
+      alt="Logo"
+      class="axess-logo"
+    />
+    <div class="internal-label">INTERNAL</div>
+  </div>
+  <div class="container-fluid p-0">
+    <div class="page-section shadow-lg w-100">
+      <div class="usecase-title d-flex justify-content-between align-items-center mb-3">
+        <span>Welcome to <span style="color:#0072ce;">My Standard Chartered</span></span>
+        <span class="academy-label">Here For Good.</span>
+      </div>
+      <form id="customerForm" class="mb-4" autocomplete="off" novalidate>
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="nameInput" class="small font-weight-bold">Name:</label>
+            <input type="text" id="nameInput" class="form-control" placeholder="Enter Name" required />
+          </div>
+          <div class="form-group col-md-3">
+            <label for="emailInput" class="small font-weight-bold">Email Id:</label>
+            <input type="email" id="emailInput" class="form-control" placeholder="Enter email" required />
+          </div>
+          <div class="form-group col-md-3">
+            <label for="contactInput" class="small font-weight-bold">Contact No.:</label>
+            <input type="text" id="contactInput" class="form-control" placeholder="Enter contact no." maxlength="15" pattern="\d*" required />
+          </div>
+          <div class="form-group col-md-3">
+            <label for="typeInput" class="small font-weight-bold">Account Type:</label>
+            <select id="typeInput" class="form-control" required>
+              <option value="">Select account type</option>
+              <option value="savings">Savings</option>
+              <option value="current">Current</option>
+            </select>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mt-3">
+          <button id="addCustomerBtn" class="btn btn-sc-primary">Login</button>
+          <a href="customer-details.html" class="btn btn-outline-sc-primary ml-2">View Customer Details</a>
+        </div>
+      </form>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover table-sm mb-0">
+          <thead class="thead-sc text-center">
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Contact</th>
+              <th>Account Type</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="customerTableBody"></tbody>
+          <tr id="noCustomersRow">
+            <td colspan="5" class="text-center text-muted">No customers yet. Add a customer to see actions here.</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="form.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    .page-section {
+      background: #fff;
+      border-radius: 18px;
+      padding: 36px 44px 28px 44px;
+      box-shadow: 0 4px 24px rgba(0, 114, 206, 0.10);
+      margin: 32px 0;
+      width: 100%;
+      max-width: none;
+    }
+    @media (max-width: 900px) {
+      .page-section {
+        padding: 18px 8px 18px 8px;
+      }
+    }
+  </style>
+  <meta charset="UTF-8" />
+  <title>Customer Bank Details - Axess Academy</title>
+  <!-- Bootstrap CSS -->
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+  <link rel="stylesheet" href="sc-theme.css" />
+</head>
+<body>
+  <div class="header-bar d-flex align-items-center justify-content-between px-4 mb-4">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Standard_Chartered_logo.svg"
+      alt="Logo"
+      class="axess-logo"
+    />
+    <div class="internal-label">INTERNAL</div>
+  </div>
+  <div class="container-fluid p-0">
+    <div class="page-section shadow-lg w-100">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="usecase-title mb-0">Customer Bank Details</h2>
+      <a href="form1.html" class="btn btn-outline-sc-primary">Back to Registration</a>
+    </div>
+    <label for="customerSelect" class="font-weight-bold">Select Customer:</label>
+    <div class="d-flex align-items-center mb-3">
+      <select id="customerSelect" class="form-control mr-2" style="max-width:320px;">
+        <option value="">-- Select Customer --</option>
+      </select>
+      <button id="refreshBtn" class="btn btn-sc-primary">Refresh Data</button>
+    </div>
+    <div id="customerDetails" class="card details" style="display:none">
+      <div class="card-body">
+        <div class="row detail-item">
+          <div class="col-6"><strong>Name:</strong> <span id="detailName"></span></div>
+          <div class="col-6"><strong>Email:</strong> <span id="detailEmail"></span></div>
+        </div>
+        <div class="row detail-item">
+          <div class="col-6"><strong>Contact:</strong> <span id="detailContact"></span></div>
+          <div class="col-6"><strong>Account Type:</strong> <span id="detailType"></span></div>
+        </div>
+        <hr />
+        <div class="row detail-item">
+          <div class="col-6"><strong>Balance:</strong> <span id="detailBalance"></span></div>
+          <div class="col-6">
+            <strong>Credit Score:</strong>
+            <div class="credit-score-meter mt-1" title="Customer Credit Score">
+              <div id="creditScoreBar" class="credit-score-bar" style="width: 0%">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="noSelectionMsg" class="no-selection text-center mt-4">Please select a customer above.</div>
+    </div>
+  <script src="customer-details.js"></script>
+</body>
+</html>
+
+    
